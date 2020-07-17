@@ -1,4 +1,11 @@
 
+# Study Group Recordings Playlist
+-  Project Specific:
+    - [Intro to Mod Project from 100719PT Cohort]( https://youtu.be/Uy9O1NcjZ68?t=2274)
+
+- 4-Part Lessons for Regression (100719PT cohort)
+    - https://www.youtube.com/playlist?list=PLFknVelSJiSzPeEKXfAFYjzzzvK8zr_qA
+___
 # Module 2 Final Project
 
 

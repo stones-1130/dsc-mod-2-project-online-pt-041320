@@ -1,110 +1,160 @@
-# OVERVIEW OF OSEMiN
 
-    
-<img src='https://raw.githubusercontent.com/jirvingphd/fsds_100719_cohort_notes/master/images/OSEMN.png' width=800>
-<center><a href="https://www.kdnuggets.com/2018/02/data-science-command-line-book-exploring-data.html"> 
-    </a></center>
+# Module 2 Final Project
 
 
-> <font size=4em>The Data Science Process we'll be using during this section--OSEMiN (pronounced "OH-sum", rhymes with "possum").  This is the most straightforward of the Data Science Processes discussed so far.  **Note that during this process, just like the others, the stages often blur together.***  It is completely acceptable (and ***often a best practice!) to float back and forth** between stages as you learn new things about your problem, dataset, requirements, etc.  
-It's quite common to get to the modeling step and realize that you need to scrub your data a bit more or engineer a different feature and jump back to the "Scrub" stage, or go all the way back to the "Obtain" stage when you realize your current data isn't sufficient to solve this problem. 
-As with any of these frameworks, *OSEMiN is meant to be treated as guidelines, not law. 
-</font>
+## Introduction
+
+In this lesson, we'll review all of the guidelines and specifications for the final project for Module 2.
+
+## Objectives
+You will be able to:
+* Describe all required aspects of the final project for Module 2
+* Describe all required deliverables
+* Describe what constitutes a successful project
+
+## Final Project Summary
+
+Another module down--you're almost half way there!
+
+![awesome](https://raw.githubusercontent.com/learn-co-curriculum/dsc-mod-2-project-v2-1/master/halfway-there.gif)
+
+All that remains in Module 2 is to put our newfound data science skills to use with a final project! You should expect this project to take between 20 and 25 hours of solid, focused effort. If you're done way quicker, go back and dig in deeper or try some of the optional "level up" suggestions. If you're worried that you're going to get to 30 hrs and still not even have the data imported, reach out to an instructor in Slack ASAP to get some help!
+
+## The Dataset
+
+For this project, you'll be working with the King County House Sales dataset. We've modified the dataset to make it a bit more fun and challenging.  The dataset can be found in the file `"kc_house_data.csv"`, in this repo.
+
+The description of the column names can be found in the column_names.md file in this repository. As with most real world data sets, the column names are not perfectly described, so you'll have to do some research or use your best judgment if you have questions relating to what the data means.
+
+You'll clean, explore, and model this dataset with a multivariate linear regression to predict the sale price of houses as accurately as possible.
+
+## The Deliverables
+
+For online students, there will be five deliverables for this project (Note: On-campus students may have different requirements, please speak with your instructor):
+
+1. A well documented **Jupyter Notebook** containing any code you've written for this project and comments explaining it. This work will need to be pushed to your GitHub repository in order to submit your project.  
+2. An organized **README.md** file in the GitHub repository that describes the contents of the repository. This file should be the source of information for navigating through the repository.
+3. A short **Keynote/PowerPoint/Google Slides presentation** (delivered as a PDF export) giving a high-level overview of your methodology and recommendations for non-technical stakeholders. Make sure to also add and commit this pdf of your non-technical presentation to your repository with a file name of presentation.pdf.
+4. **[A Blog Post](https://github.com/learn-co-curriculum/dsc-welcome-blogging-v2-1)**	
+5. A **Video Walkthrough** of your non-technical presentation. Some common video recording tools used are Zoom, Quicktime, and Nimbus. After you record your presentation, publish it on a service like YouTube or Google Drive, you will need a link to the video to submit your project.
+
+Note: On-campus students may have different requirements, please speak with your instructor.
+
+### Jupyter Notebook Must-Haves
+
+For this project, your Jupyter Notebook should meet the following specifications:
+
+#### Organization/Code Cleanliness
+
+* The notebook should be well organized, easy to follow,  and code should be commented where appropriate.  
+    * Level Up: The notebook contains well-formatted, professional looking markdown cells explaining any substantial code.  All functions have docstrings that act as professional-quality documentation
+* The notebook is written for technical audiences with a way to both understand your approach and reproduce your results. The target audience for this deliverable is other data scientists looking to validate your findings.
+
+#### Visualizations & EDA
+
+* Your project contains at least 4 meaningful data visualizations, with corresponding interpretations. All visualizations are well labeled with axes labels, a title, and a legend (when appropriate)  
+* You pose at least 3 meaningful questions and answer them through EDA.  These questions should be well labeled and easy to identify inside the notebook.
+    * **Level Up**: Each question is clearly answered with a visualization that makes the answer easy to understand.   
+* Your notebook should contain 1 - 2 paragraphs briefly explaining your approach to this project.
+
+#### Model Quality/Approach
+
+* Your model should not include any predictors with p-values greater than .05.  
+* Your notebook shows an iterative approach to modeling, and details the parameters and results of the model at each iteration.  
+    * **Level Up**: Whenever necessary, you briefly explain the changes made from one iteration to the next, and why you made these choices.  
+* You provide at least 1 paragraph explaining your final model.   
+* You pick at least 3 coefficients from your final model and explain their impact on the price of a house in this dataset.   
 
 
-### OSEMN DETAILS
+### Non-Technical Presentation Must-Haves
 
-**OBTAIN**
+Another deliverable should be a Keynote, PowerPoint or Google Slides presentation delivered as a pdf file in your fork of this repository with the file name of `presentation.pdf` detailing the results of your project.  Your target audience is non-technical people interested in using your findings to maximize their profit when selling their home.
 
-- This step involves understanding stakeholder requirements, gathering information on the problem, and finally sourcing data that we think will be necessary for solving this problem. 
+Your presentation should:
 
-**SCRUB**
+* Contain between 5 - 10 professional-quality slides.  
+    * **Level Up**: The slides should use visualizations whenever possible, and avoid walls of text.
+* Take no more than 5 minutes to present.   
+* Avoid technical jargon and explain the results in a clear, actionable way for non-technical audiences.   
 
-- During this stage, we'll focus on preprocessing our data.  Important steps such as identifying and removing null values, dealing with outliers, normalizing data, and feature engineering/feature selection are handled around this stage.  The line with this stage really blurs with the _Explore_ stage, as it is common to only realize that certain columns require cleaning or preprocessing as a result of the visualzations and explorations done during Step 3.  
+**_Based on the results of your models, your presentation should discuss at least two concrete features that highly influence housing prices._**
 
-- Note that although technically, categorical data should be one-hot encoded during this step, in practice, it's usually done after data exploration.  This is because it is much less time-consuming to visualize and explore a few columns containing categorical data than it is to explore many different dummy columns that have been one-hot encoded. 
+### Blog Post Must-Haves
 
-**EXPLORE**
-
-- This step focuses on getting to know the dataset you're working with. As mentioned above, this step tends to blend with the _Scrub_ step mentioned above.  During this step, you'll create visualizations to really get a feel for your dataset.  You'll focus on things such as understanding the distribution of different columns, checking for multicollinearity, and other tasks liek that.  If your project is a classification task, you may check the balance of the different classes in your dataset.  If your problem is a regression task, you may check that the dataset meets the assumptions necessary for a regression task.  
-
-- At the end of this step, you should have a dataset ready for modeling that you've thoroughly explored and are extremely familiar with.  
-
-**MODEL**
-
-- This step, as with the last two frameworks, is also pretty self-explanatory. It consists of building and tuning models using all the tools you have in your data science toolbox.  In practice, this often means defining a threshold for success, selecting machine learning algorithms to test on the project, and tuning the ones that show promise to try and increase your results.  As with the other stages, it is both common and accepted to realize something, jump back to a previous stage like _Scrub_ or _Explore_, and make some changes to see how it affects the model.  
-
-**iNTERPRET**
-
-- During this step, you'll interpret the results of your model(s), and communicate results to stakeholders.  As with the other frameworks, communication is incredibily important! During this stage, you may come to realize that further investigation is needed, or more data.  That's totally fine--figure out what's needed, go get it, and start the process over! If your results are satisfactory to all stakeholders involved, you may also go from this stage right into productionizing your model and automating processes necessary to support it.  
+Refer back to the [Blogging Guidelines](https://github.com/learn-co-curriculum/dsc-welcome-blogging-v2-1) for the technical requirements and blog ideas.
 
 
+## The Process 
+The process for this project is identical to the process you followed for your module 1 project. We specified it again below as a refresher.
+(Note: On-campus students may have different processes, please speak with your instructor)
 
-## PROCESS CHECKLIST
+### 1. Getting Started
+
+Please start by reviewing this document. If you have any questions, please ask them in Slack ASAP so (a) we can answer the questions and (b) so we can update this repository to make it clearer.
+
+Be sure to let the instructor team know when you’ve started working on a project, either by reaching out over Slack or, if you are in a full-time or part-time cohort, by connecting with your Cohort Lead in your weekly 1:1. If you’re not sure who to reach out to, post in the #online-ds-sp-000 channel in Slack.
+
+Once you're done with this module, please start on the project. Do that by forking this repository, cloning it locally, and working in the student.ipynb file. Make sure to also add and commit a pdf of your presentation to the repository with a file name of `presentation.pdf`.
+
+### 2. The Project Review
+
+_Note: On-campus students may have different review processes, please speak with your instructor._
+
+> **When you start on the project, please also reach out to an instructor immediately to schedule your project review** (if you're not sure who to schedule with, please ask in Slack!)
+
+#### What to expect from the Project Review
+
+Project reviews are focused on preparing you for technical interviews. Treat project reviews as if they were technical interviews, in both attitude and technical presentation *(sometimes technical interviews will feel arbitrary or unfair - if you want to get the job, commenting on that is seldom a good choice)*.
+
+The project review is comprised of a 45 minute 1:1 session with one of the instructors. During your project review, be prepared to:
+
+#### 1. Deliver your PDF presentation to a non-technical stakeholder.
+In this phase of the review (~10 mins) your instructor will play the part of a non-technical stakeholder that you are presenting your findings to. The presentation  should not exceed 5 minutes, giving the "stakeholder" 5 minutes to ask questions.
+
+In the first half of the presentation (2-3 mins), you should summarize your methodology in a way that will be comprehensible to someone with no background in data science and that will increase their confidence in you and your findings. In the second half (the remaining 2-3 mins) you should summarize your findings and be ready to answer a couple of non-technical questions from the audience. The questions might relate to technical topics (sampling bias, confidence, etc) but will be asked in a non-technical way and need to be answered in a way that does not assume a background in statistics or machine learning. You can assume a smart, business stakeholder, with a non-quantitative college degree.
+
+#### 2. Go through the Jupyter Notebook, answering questions about how you made certain decisions. Be ready to explain things like:
+    * "How did you pick the question(s) that you did?"
+    * "Why are these questions important from a business perspective?"
+    * "How did you decide on the data cleaning options you performed?"
+    * "Why did you choose a given method or library?"
+    * "Why did you select those visualizations and what did you learn from each of them?"
+    * "Why did you pick those features as predictors?"
+    * "How would you interpret the results?"
+    * "How confident are you in the predictive quality of the results?"
+    * "What are some of the things that could cause the results to be wrong?"
+
+Think of the first phase of the review (~30 mins) as a technical boss reviewing your work and asking questions about it before green-lighting you to present to the business team. You should practice using the appropriate technical vocabulary to explain yourself. Don't be surprised if the instructor jumps around or sometimes cuts you off - there is a lot of ground to cover, so that may happen.
+
+If any requirements are missing or if significant gaps in understanding are uncovered, be prepared to do one or all of the following:
+* Perform additional data cleanup, visualization, feature selection, modeling and/or model validation
+* Submit an improved version
+* Meet again for another Project Review
+
+What won't happen:
+* You won't be yelled at, belittled, or scolded
+* You won't be put on the spot without support
+* There's nothing you can do to instantly fail or blow it
+
+**Please note: We need to receive the URL of your repository at least 24 hours before and please have the project finished at least 3 hours before your review so we can look at your materials in advance.**
 
 
-> Keep in mind that it is normal to jump between the OSEMN phases and some of them will blend together, like SCRUB and EXPLORE.
+## Submitting your Project
 
-1. **[OBTAIN](#OBTAIN)**
-    - Import data, inspect, check for datatypes to convert and null values
-    - Display header and info.
-    - Drop any unneeded columns, if known (`df.drop(['col1','col2'],axis=1,inplace=True`)
-    <br><br>
+ You’re almost done! In order to submit your project for review, include the following links to your work in the corresponding fields on the right-hand side of Learn.
+
+ 1. **GitHub Repo:** Now that you’ve completed your project in Jupyter Notebooks, push your work to GitHub and paste that link to the right. (If you need help doing so, review the resources [here](https://docs.google.com/spreadsheets/d/1CNGDhjcQZDRx2sWByd2v-mgUOjy13Cd_hQYVXPuzEDE/edit#gid=0).)
+_Reminder: Make sure to also add and commit a pdf of your non-technical presentation to the repository with a file name of presentation.pdf._
+2. **Blog Post:** Include a link to your blog post.
+3. **Record Walkthrough:** Include a link to your video walkthrough.
+
+ Hit "I'm done" to wrap it up. You will receive an email in order to schedule your review with your instructor.
+ 
+ 
+## Grading Rubric
+Online students can find a PDF of the grading rubric for the project [here](https://github.com/learn-co-curriculum/dsc-mod-2-project-v2-1/blob/master/mod2_project_rubric.pdf). On-campus students may have different review processes, please speak with your instructor.
 
 
-2. **[SCRUB](#SCRUB)**
-    - Recast data types, identify outliers, check for multicollinearity, normalize data**
-    - Check and cast data types
-        - [ ] Check for #'s that are store as objects (`df.info()`,`df.describe()`)
-            - when converting to #'s, look for odd values (like many 0's), or strings that can't be converted.
-            - Decide how to deal weird/null values (`df.unique()`, `df.isna().sum()`)
-            - `df.fillna(subset=['col_with_nulls'],'fill_value')`, `df.replace()`
-        - [ ] Check for categorical variables stored as integers.
-            - May be easier to tell when you make a scatter plotm or `pd.plotting.scatter_matrix()`
-            
-    - [ ] Check for missing values  (df.isna().sum())
-        - Can drop rows or colums
-        - For missing numeric data with median or bin/convert to categorical
-        - For missing categorical data: make NaN own category OR replace with most common category
-    - [ ] Check for multicollinearity
-        - Use seaborn to make correlation matrix plot 
-        - Good rule of thumb is anything over 0.75 corr is high, remove the variable that has the most correl with the largest # of variables
-    - [ ] Normalize data (may want to do after some exploring)
-        - Most popular is Z-scoring (but won't fix skew) 
-        - Can log-transform to fix skewed data
-    
-    
-3. **[EXPLORE](#EXPLORE)**
-    - [ ] Check distributions, outliers, etc**
-    - [ ] Check scales, ranges (df.describe())
-    - [ ] Check histograms to get an idea of distributions (df.hist()) and data transformations to perform.
-        - Can also do kernel density estimates
-    - [ ] Use scatter plots to check for linearity and possible categorical variables (`df.plot("x","y")`)
-        - categoricals will look like vertical lines
-    - [ ] Use `pd.plotting.scatter_matrix(df)` to visualize possible relationships
-    - [ ] Check for linearity.
-   
-   
-4. **[MODEL](#MODEL)**
+## Summary
 
-    - **Fit an initial model:** 
-        - Run an initial model and get results
-
-    - **Holdout validation / Train/test split**
-        - use sklearn `train_test_split`
-    
-    
-5. **[iNTERPRET](#iNTERPRET)**
-    - **Assessing the model:**
-        - Assess parameters (slope,intercept)
-        - Check if the model explains the variation in the data (RMSE, F, R_square)
-        - *Are the coeffs, slopes, intercepts in appropriate units?*
-        - *Whats the impact of collinearity? Can we ignore?*
-        <br><br>
-    - **Revise the fitted model**
-        - Multicollinearity is big issue for lin regression and cannot fully remove it
-        - Use the predictive ability of model to test it (like R2 and RMSE)
-        - Check for missed non-linearity
-        
-       
-6. **Interpret final model and draw >=3 conclusions and recommendations from dataset**
+The end of module projects and project reviews are a critical part of the program. They give you a chance to both bring together all the skills you've learned into realistic projects and to practice key "business judgement" and communication skills that you otherwise might not get as much practice with.

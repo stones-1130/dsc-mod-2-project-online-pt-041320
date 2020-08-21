@@ -58,19 +58,6 @@ df.head()
 
 
 
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
 </style>
 <table border="1" class="dataframe">
   <thead>
@@ -274,19 +261,7 @@ df.head()
 
 
 
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
 </style>
 <table border="1" class="dataframe">
   <thead>
@@ -431,6 +406,7 @@ df.head()
 > - "yr_renovated" to int64
 
 
+<<<<<<< HEAD:README.md
 ```python
 #LOOK CLOSER AT 'sqft_basement' COLUMN
 df['sqft_basement'].value_counts(dropna=False)
@@ -502,6 +478,8 @@ df['yr_renovated'].value_counts(dropna=False)
 
 
 
+=======
+>>>>>>> 4e31d95205a896b45220d82033e0d5c82dbae973:README_MOD_2.md
 
 ```python
 #BECAUSE WE HAVE LOTS OF NA VALUES IN BOTH COLUMNS, WE'LL LEAVE THEM AS FLOATS FOR NOW
@@ -548,20 +526,7 @@ df.describe()
 ```
 
 
-
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
+  text-align: right;
     }
 </style>
 <table border="1" class="dataframe">
@@ -755,6 +720,7 @@ df.describe()
 
 
 
+<<<<<<< HEAD:README.md
 ```python
 #DO A QUICK PASS OF THE TOP 5 VALUE COUNTS FOR EACH INT64 COLUMN TO QUICKLY CHECK DATA QUALITY
 pd.set_option('display.max_rows', 20)
@@ -940,6 +906,8 @@ for col in df.columns:
     
 
 
+=======
+>>>>>>> 4e31d95205a896b45220d82033e0d5c82dbae973:README_MOD_2.md
 # EXPLORE
 
 
@@ -1003,440 +971,11 @@ heatmap.set_title('Kings Country Home Sales (2014-2015) data Correlation Matrix'
 
 
 
-```python
-#ANOTHER WAY TO VISUALLY REPRESENT MULTI-COLLINEARITY
-test_corr = abs(df.corr()) > 0.75
-
-test_corr
-```
-
-
-
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>price</th>
-      <th>bedrooms</th>
-      <th>bathrooms</th>
-      <th>sqft_living</th>
-      <th>sqft_lot</th>
-      <th>floors</th>
-      <th>waterfront</th>
-      <th>view</th>
-      <th>condition</th>
-      <th>grade</th>
-      <th>sqft_above</th>
-      <th>sqft_basement</th>
-      <th>yr_built</th>
-      <th>yr_renovated</th>
-      <th>zipcode</th>
-      <th>sqft_living15</th>
-      <th>sqft_lot15</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>price</td>
-      <td>True</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-    </tr>
-    <tr>
-      <td>bedrooms</td>
-      <td>False</td>
-      <td>True</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-    </tr>
-    <tr>
-      <td>bathrooms</td>
-      <td>False</td>
-      <td>False</td>
-      <td>True</td>
-      <td>True</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-    </tr>
-    <tr>
-      <td>sqft_living</td>
-      <td>False</td>
-      <td>False</td>
-      <td>True</td>
-      <td>True</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>True</td>
-      <td>True</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>True</td>
-      <td>False</td>
-    </tr>
-    <tr>
-      <td>sqft_lot</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>True</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-    </tr>
-    <tr>
-      <td>floors</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>True</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-    </tr>
-    <tr>
-      <td>waterfront</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>True</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-    </tr>
-    <tr>
-      <td>view</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>True</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-    </tr>
-    <tr>
-      <td>condition</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>True</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-    </tr>
-    <tr>
-      <td>grade</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>True</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>True</td>
-      <td>True</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-    </tr>
-    <tr>
-      <td>sqft_above</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>True</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>True</td>
-      <td>True</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-    </tr>
-    <tr>
-      <td>sqft_basement</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>True</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-    </tr>
-    <tr>
-      <td>yr_built</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>True</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-    </tr>
-    <tr>
-      <td>yr_renovated</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>True</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-    </tr>
-    <tr>
-      <td>zipcode</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>True</td>
-      <td>False</td>
-      <td>False</td>
-    </tr>
-    <tr>
-      <td>sqft_living15</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>True</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>True</td>
-      <td>False</td>
-    </tr>
-    <tr>
-      <td>sqft_lot15</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>True</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
-
-
-
-```python
-#LOOK AT SUM OF BOOLEANS IN EACH ROW TO DETERMINE WHICH VARIABLES HAVE THE MOST CORRELATIONS > .75
-sum_row = test_corr.sum(axis=1)
-print(sum_row)
-```
-
-    price            1
-    bedrooms         1
-    bathrooms        2
-    sqft_living      5
-    sqft_lot         1
-    floors           1
-    waterfront       1
-    view             1
-    condition        1
-    grade            3
-    sqft_above       3
-    sqft_basement    1
-    yr_built         1
-    yr_renovated     1
-    zipcode          1
-    sqft_living15    2
-    sqft_lot15       1
-    dtype: int64
-
-
-
-```python
-#DROP date COLUMN
-df.drop(['date'],axis=1,inplace=True)
-```
-
 > **Let's explore what features have an effect on price. First, let's look at the categorical variables from the scatter plot** 
 
 > - **View**
 > - **Condition**
 > - **Grade**
-> - **Waterfront**
-> - **Floors**
 > - **Bedrooms**
 > - **Bathrooms**
 
@@ -1477,6 +1016,7 @@ sns.boxplot(x='grade', y='price', data=df);
 
 
 ```python
+<<<<<<< HEAD:README.md
 plt.figure(figsize=(18,8))
 plt.title('Waterfront and Price', fontsize=20)
 sns.boxplot(x='waterfront', y='price', data=df);
@@ -1500,6 +1040,8 @@ sns.boxplot(x='floors', y='price', data=df);
 
 
 ```python
+=======
+>>>>>>> 4e31d95205a896b45220d82033e0d5c82dbae973:README_MOD_2.md
 #BEDROOMS & PRICE
 sns.set()
 plt.figure(figsize=(18,8))
@@ -1526,7 +1068,6 @@ sns.barplot(x='bathrooms', y='price', data=df);
 > **Now let's explore some our continuous features:**
 
 > - **sqft_living**
-> - **sqft_basement**
 > - **sqft_lot**
 
 
@@ -1555,6 +1096,7 @@ sns.scatterplot(x='sqft_living15', y='price', data=df);
 
 
 
+<<<<<<< HEAD:README.md
 ```python
 plt.figure(figsize=(18,8))
 plt.title('Basement Size and Price', fontsize=20)
@@ -1564,6 +1106,8 @@ sns.regplot(x='sqft_basement', y='price', data=df, ci=95);
 
 ![png](output_42_0.png)
 
+=======
+>>>>>>> 4e31d95205a896b45220d82033e0d5c82dbae973:README_MOD_2.md
 
 
 ```python
@@ -1746,20 +1290,6 @@ df_base.head()
 
 
 
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
 </style>
 <table border="1" class="dataframe">
   <thead>
@@ -1906,6 +1436,86 @@ cat_var = ['bedrooms','bathrooms','floors', 'grade', 'waterfront', 'condition',
 
 features = ['bedrooms','bathrooms','sqft_living','sqft_lot','floors', 'grade', 'waterfront', 'condition', 
            'zipcode']
+<<<<<<< HEAD:README.md
+=======
+linreg_base = LinearRegression()
+linreg_base.fit(train_df_base[features], train_df_base['price'])
+
+# TURN COEFFICIENTS INTO A DATAFRAME FOR VIEWING
+coefs_base = linreg_base.coef_
+view_cfs_base = pd.DataFrame(coefs_base, train_df_base[features].columns, 
+                             columns=['coefficients']).sort_values(by='coefficients', ascending = False)
+
+display(view_cfs_base)
+
+# INTERCEPT
+print('Intercept: {}'.format(linreg_base.intercept_))
+
+# R2 
+print('R2 train value: {}'.format(linreg_base.score(train_df_base[features], train_df_base['price'])))
+print('R2 test value: {}'.format(linreg_base.score(test_df_base[features], test_df_base['price'])))
+
+
+```
+
+
+
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>coefficients</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>waterfront</td>
+      <td>769250.347885</td>
+    </tr>
+    <tr>
+      <td>grade</td>
+      <td>105636.951625</td>
+    </tr>
+    <tr>
+      <td>condition</td>
+      <td>59510.975992</td>
+    </tr>
+    <tr>
+      <td>zipcode</td>
+      <td>575.451240</td>
+    </tr>
+    <tr>
+      <td>sqft_living</td>
+      <td>216.092118</td>
+    </tr>
+    <tr>
+      <td>sqft_lot</td>
+      <td>-0.260593</td>
+    </tr>
+    <tr>
+      <td>bathrooms</td>
+      <td>-7284.541032</td>
+    </tr>
+    <tr>
+      <td>floors</td>
+      <td>-23023.811246</td>
+    </tr>
+    <tr>
+      <td>bedrooms</td>
+      <td>-41753.841571</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+    Intercept: -57171328.19494343
+    R2 train value: 0.5930386136318035
+    R2 test value: 0.6155017206812767
+
+
+>>>>>>> 4e31d95205a896b45220d82033e0d5c82dbae973:README_MOD_2.md
 
 outcome = 'price'
 predictors = '+'.join(features)
@@ -1915,9 +1525,81 @@ formula
 
 
 
+<<<<<<< HEAD:README.md
 
     'price~bedrooms+bathrooms+sqft_living+sqft_lot+floors+grade+waterfront+condition+zipcode'
 
+=======
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Actual</th>
+      <th>Predicted</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>4000</td>
+      <td>282500.0</td>
+      <td>395876.092403</td>
+    </tr>
+    <tr>
+      <td>13454</td>
+      <td>520000.0</td>
+      <td>500633.103161</td>
+    </tr>
+    <tr>
+      <td>6911</td>
+      <td>546000.0</td>
+      <td>298516.420124</td>
+    </tr>
+    <tr>
+      <td>12662</td>
+      <td>345000.0</td>
+      <td>456478.125047</td>
+    </tr>
+    <tr>
+      <td>2924</td>
+      <td>265000.0</td>
+      <td>395667.162909</td>
+    </tr>
+    <tr>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <td>17271</td>
+      <td>735000.0</td>
+      <td>592634.545499</td>
+    </tr>
+    <tr>
+      <td>15815</td>
+      <td>499950.0</td>
+      <td>727156.689177</td>
+    </tr>
+    <tr>
+      <td>20048</td>
+      <td>571000.0</td>
+      <td>534228.579776</td>
+    </tr>
+    <tr>
+      <td>14997</td>
+      <td>915000.0</td>
+      <td>913792.008160</td>
+    </tr>
+    <tr>
+      <td>13669</td>
+      <td>445000.0</td>
+      <td>575929.805178</td>
+    </tr>
+  </tbody>
+</table>
+<p>25 rows × 2 columns</p>
+</div>
+>>>>>>> 4e31d95205a896b45220d82033e0d5c82dbae973:README_MOD_2.md
 
 
 > **Let's one-hot encode our categorical variables (named "cat_var" above).**
@@ -2022,6 +1704,7 @@ model.summary()
 <tr>
   <th>C(bathrooms)[T.1.0]</th>  <td>  6.04e+04</td> <td> 8.82e+04</td> <td>    0.685</td> <td> 0.493</td> <td>-1.12e+05</td> <td> 2.33e+05</td>
 </tr>
+<<<<<<< HEAD:README.md
 <tr>
   <th>C(bathrooms)[T.1.25]</th> <td>-3.105e+04</td> <td> 1.02e+05</td> <td>   -0.305</td> <td> 0.760</td> <td>-2.31e+05</td> <td> 1.69e+05</td>
 </tr>
@@ -2388,11 +2071,15 @@ model.summary()
   <th>Kurtosis:</th>       <td>39.360</td>   <th>  Cond. No.          </th>  <td>2.16e+07</td>  
 </tr>
 </table><br/><br/>Warnings:<br/>[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.<br/>[2] The condition number is large, 2.16e+07. This might indicate that there are<br/>strong multicollinearity or other numerical problems.
+=======
+</table><br/><br/>Warnings:<br/>[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.<br/>[2] The condition number is large, 1.89e+08. This might indicate that there are<br/>strong multicollinearity or other numerical problems.
+>>>>>>> 4e31d95205a896b45220d82033e0d5c82dbae973:README_MOD_2.md
 
 
 
 
 ```python
+<<<<<<< HEAD:README.md
 #NEED TO ONE-HOT ENCODE CATEGORICAL VARIABLES AND MERGE WITH NUMERICAL VARIABLES
 
 bed_dummies = pd.get_dummies(df_base['bedrooms'], prefix='bed', drop_first=True)
@@ -2468,11 +2155,23 @@ pred_df_base = pd.DataFrame({'Actual': y_test, 'Predicted': y_hat_test, 'Diff': 
 df1 = pred_df_base.sort_values(by=['Diff'], ascending=False).head(20)
 
 df1
+=======
+#MULTI-COLLINEARITY ANALYSIS
+from statsmodels.stats.outliers_influence import variance_inflation_factor
+
+vif = pd.DataFrame()
+X = train_df_base[features]
+vif['VIF value'] = [variance_inflation_factor(X.values, i) for i in range(X.shape[1])]
+vif['Feature'] = X.columns
+
+vif.round(3)
+>>>>>>> 4e31d95205a896b45220d82033e0d5c82dbae973:README_MOD_2.md
 ```
 
 
 
 
+<<<<<<< HEAD:README.md
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -2486,18 +2185,27 @@ df1
     .dataframe thead th {
         text-align: right;
     }
+=======
+
+>>>>>>> 4e31d95205a896b45220d82033e0d5c82dbae973:README_MOD_2.md
 </style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
       <th></th>
+<<<<<<< HEAD:README.md
       <th>Actual</th>
       <th>Predicted</th>
       <th>Diff</th>
+=======
+      <th>VIF value</th>
+      <th>Feature</th>
+>>>>>>> 4e31d95205a896b45220d82033e0d5c82dbae973:README_MOD_2.md
     </tr>
   </thead>
   <tbody>
     <tr>
+<<<<<<< HEAD:README.md
       <td>12358</td>
       <td>4210000.0</td>
       <td>1863995.29</td>
@@ -2678,6 +2386,41 @@ vif.sort_values(by=['VIF value'], ascending=False).round(3)
       <th></th>
       <th>VIF value</th>
       <th>Feature</th>
+=======
+      <td>0</td>
+      <td>24.994</td>
+      <td>bedrooms</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>24.924</td>
+      <td>bathrooms</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>24.879</td>
+      <td>sqft_living</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>1.185</td>
+      <td>sqft_lot</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>13.016</td>
+      <td>floors</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>120.891</td>
+      <td>grade</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>1.024</td>
+      <td>waterfront</td>
+>>>>>>> 4e31d95205a896b45220d82033e0d5c82dbae973:README_MOD_2.md
     </tr>
   </thead>
   <tbody>
@@ -2818,19 +2561,6 @@ df_base[(np.abs(stats.zscore(df_base[features])) < 3).all(axis=1)]
 
 
 
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
 </style>
 <table border="1" class="dataframe">
   <thead>
@@ -3170,20 +2900,6 @@ display(view_cfs_2)
 
 ```
 
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
 </style>
 <table border="1" class="dataframe">
   <thead>
@@ -3303,6 +3019,7 @@ plt.show()
 > - Examine crime statistics effect on home prices.
 
  
+<<<<<<< HEAD:README.md
 
 
 
@@ -3336,3 +3053,5 @@ display(dummy_grade.head())
 ```
 
 > Summarize your conclusions and bullet-point your list of recommendations, which are based on your modeling results.
+=======
+>>>>>>> 4e31d95205a896b45220d82033e0d5c82dbae973:README_MOD_2.md
